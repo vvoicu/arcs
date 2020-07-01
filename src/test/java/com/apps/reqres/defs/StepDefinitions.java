@@ -4,6 +4,7 @@ import static io.restassured.RestAssured.given;
 
 import org.junit.Assert;
 
+import com.tools.Constants;
 import com.tools.FieldGenerators;
 import com.tools.FieldGenerators.Mode;
 
@@ -26,7 +27,7 @@ public class StepDefinitions {
 	@Given("I have user details")
 	public void i_have_user_details() {
 
-		RestAssured.baseURI = "https://reqres.in/";
+		RestAssured.baseURI = Constants.BASE_URL;
 		createUserPayload = "{\r\n" + "    \"name\": \"" + FieldGenerators.generateRandomString(10, Mode.ALPHA)
 				+ "\",\r\n" + "    \"job\": \"" + FieldGenerators.generateRandomString(10, Mode.ALPHA) + "\"\r\n" + "}";
 		
