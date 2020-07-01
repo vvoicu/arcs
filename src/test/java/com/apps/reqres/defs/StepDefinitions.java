@@ -11,10 +11,7 @@ import com.tools.FieldGenerators.Mode;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-//
-//import io.restassured.RestAssured.*;
-//import io.restassured.matcher.RestAssuredMatchers.*;
-//import org.hamcrest.Matchers.*;
+
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
@@ -30,7 +27,7 @@ public class StepDefinitions {
 		RestAssured.baseURI = Constants.BASE_URL;
 		createUserPayload = "{\r\n" + "    \"name\": \"" + FieldGenerators.generateRandomString(10, Mode.ALPHA)
 				+ "\",\r\n" + "    \"job\": \"" + FieldGenerators.generateRandomString(10, Mode.ALPHA) + "\"\r\n" + "}";
-		
+
 		System.out.println("Request Body: " + createUserPayload);
 	}
 

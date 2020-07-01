@@ -41,6 +41,4 @@ public class FieldGenerators {
 		return buffer.toString();
 	}
 
-
-
 }
