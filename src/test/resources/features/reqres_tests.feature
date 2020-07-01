@@ -1,4 +1,3 @@
-
 @Regression
 Feature: Reqres API Test
 
