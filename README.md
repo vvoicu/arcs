@@ -9,4 +9,9 @@ Api Rest Cucumber Solution
 
 Project is created based on the default cucumber archetype.
 
-```mvn verify```
+``` mvn verify ```
+
+
+Run with cucumber options
+
+``` mvn verify -Dcucumber.options="--tags @SeTag2" ```

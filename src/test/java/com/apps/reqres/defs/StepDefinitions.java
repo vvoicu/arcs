@@ -25,8 +25,8 @@ public class StepDefinitions {
 	public void i_have_user_details() {
 
 		RestAssured.baseURI = Constants.BASE_URL;
-		createUserPayload = "{\r\n" + "    \"name\": \"" + FieldGenerators.generateRandomString(10, Mode.ALPHA)
-				+ "\",\r\n" + "    \"job\": \"" + FieldGenerators.generateRandomString(10, Mode.ALPHA) + "\"\r\n" + "}";
+		createUserPayload = "{\n \"name\": \"" + FieldGenerators.generateRandomString(10, Mode.ALPHA)
+				+ "\",\n   \"job\": \"" + FieldGenerators.generateRandomString(10, Mode.ALPHA) + "\"\n}";
 
 		System.out.println("Request Body: " + createUserPayload);
 	}
@@ -34,7 +34,7 @@ public class StepDefinitions {
 	@When("I post for user creation")
 	public void i_post_for_user_creation() {
 		postResponse = given().urlEncodingEnabled(true).body(createUserPayload)
-				.header("Accept", ContentType.JSON.getAcceptHeader()).post("/api/users");
+				.header("Accept", ContentType.JSON.getAcceptHeader()).post(Constants.API_REQRES_CREATE_USER);
 	}
 
 	@Then("I should see user creation message")
